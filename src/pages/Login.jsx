@@ -1,6 +1,11 @@
-import styles from './Login.module.css'
+import { useNavigate } from 'react-router-dom'
+import styles from '../styles/Login.module.css'
 
 function Login() {
+  const navigate = useNavigate()
+  function handleLogin () {
+    navigate("/my-dream/home")
+  }
   return (
     <div className={styles.login}>
       <div className={styles.welcome}>
@@ -31,7 +36,7 @@ function Login() {
           <a href="#">Registre-se</a>
         </div>
 
-        <button type="submit">Concluir</button>
+        <button type="submit" onClick={handleLogin}>Concluir</button>
       </div>
     </div>
   )
